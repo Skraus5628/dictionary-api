@@ -1,3 +1,16 @@
+
+# To start the App:
+
+--CD into dictionary folder
+-- run `npm install` 
+-- run `npm start`
+
+### Make sure you have the .env
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
