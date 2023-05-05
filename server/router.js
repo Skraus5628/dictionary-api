@@ -76,14 +76,16 @@ router.get('/:id/all', async(req,res) =>{
 
 router.post('/:id/keys/:key', async(req, res, next) =>{
   let { id, key } = req.params;
-  let bodyData = req.body.value;
-  // pull body data from "value" body input
+  let bodyData = req.body;
+  // let newBody = bodyData.value
 
+  // pull body data from "value" body input
+ 
   console.log('1st step down')
-  console.log(req.body)
   console.log(id)
   console.log(key)
   console.log(bodyData)
+  
   // body data makes it here
 
     if(id && key && bodyData){
@@ -97,8 +99,8 @@ router.post('/:id/keys/:key', async(req, res, next) =>{
         'Authorization': process.env.AUTH_TOKEN
 
       },
-      // here "value" is assigning the key's value, however the body data is not passing, need to check why
-      body: "{  \"value\": \"body\"}"
+      // here "value" is assigned to the key's value, however the body data is not passing, need to check why
+      body: "{  \"value\": \"VALUE\"}"
     }, function (error, response, body) {
       console.log('step 2 happened I think')
       console.log('where body', body);

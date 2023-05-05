@@ -1,14 +1,12 @@
-
+**NOTE: this folder requires a .env with appropriate variables separate from the server folder**
 # To start the App:
 
 --CD into dictionary folder
 -- run `npm install` 
 -- run `npm start`
 
-### Make sure you have the .env
-
-
-
+*If you encounter any issues with performance, ensure you have performed setup on the `server` folder*
+*and ensure that you have launched the local server*
 
 
 # Getting Started with Create React App
