@@ -50,10 +50,7 @@ const App = () => {
       ...keyData,
       [e.target.name]: value
     });
-
-
-    // for testing
-    console.log(keyData)
+   
   };
 
   // handles dictionary form submission
@@ -113,18 +110,24 @@ const App = () => {
     
  
   const handleClick = async (event, i) =>{
+    // Sets the currDict state to the ID of the "clicked" dictionary entry.
+    // Also for testing - can likely remove the async portion for performance.
    let promise = new Promise((resolve, reject) =>{
       setTimeout(() => resolve(setCurrDict(dicts[i])), 3000)
    });
 
+  // temporarily leaving this as-is, needs updating
+
    let result = await promise
 
+  //  Storing the ID variable for the following URL.
    const currID = {
     currID: currDict.name
    }
 
-
+// After setting the selected dictionary, pulls that ID and sends the GET req to pull the associated key/value pairs object.
       await axios.get(`http://localhost:5000/dict/${currID.currID}/all`)
+        // Set the keys state 
         .then(response => setKeys(response.data))
         
        
@@ -142,8 +145,7 @@ const App = () => {
     console.log(dicts[0].name)
     console.log(dicts)
     console.log(currDict)
-    console.log(i)
-    console.log(currDict.name)
+  
 
    
   }
